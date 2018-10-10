@@ -1,52 +1,74 @@
 ///////////////////////////////////////////////////////////////////////////////
-//Module 1 Assignment 2 – Flashcard Math Tutor
+//Module 2 Assignment 1 - Java Math Calculator
 //Student: Alvaro Santillan
 //Instructor: Dr. Linda Hamons
 //CSC240 C00 Java Programming
 //Semester: Summer 2018
-//Date Created: 6-1-2018
-//Last Modified: 6-3-2018
+//Date Created: 6-4-2018
+//Last Modified: 6-4-2018
 ///////////////////////////////////////////////////////////////////////////////
 
 /*
-In this assignment, students will write a program that will present an
-addition problem to the user. The program will generate two random numbers
-and present them to the user in the form of an addition problem.
-The user will enter the answer to the problem. The program will then output
-the correct answer. Finally, the program will tell the user “goodbye” and terminate.
- */
+For this assignment, you will write a program for use by elementary
+school children. It will calculate addition, subtraction, multiplication
+and division. The program will ask for the first digit, the second
+digit and the operation to be performed (not necessarily in that order).
+It will display the answer to the problem after the last item is entered.
+*/
 
-import java.util.Random;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        //The program starts by greeting the user.
-        //The program outputs to the user the purpose of the program (flashcard math practice).
-        System.out.println("Hello");
-        System.out.println("This program generates two random numbers and presents them in the form of an addition problem.");
-        System.out.println("You will enter the answer to the problem below and this program will then output the correct answer.");
+        /*
+        The program should also use good user dialog. Remember, this program is for an audience of
+        elementary school children, so be sure to provide very clear instructions and make all
+        user dialog age appropriate.
+        */
+        System.out.println("Welcome to the BuzyBot Calculator");
+        System.out.println("We will now perform a BuzyBot calculation:");
 
-        //The program will then generate two random integer numbers between 1 and 100.
-        Random rand = new Random();
-        int randNum1 = rand.nextInt(100) + 1;
-        int randNum2 = rand.nextInt(100) + 1;
-        //100 is the maximum and 1 is the minimum.
+        //Scanner 1 to listen for numerical input from System.in
+        Scanner numbers = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        float firstNum = numbers.nextFloat(); // Scans the next token of the input as a float.
+        System.out.print("Enter the second number: ");
+        float secoundNum = numbers.nextFloat(); // Scans the next token of the input as a float.
 
-        //The program will present the user with an addition problem based on the two random numbers.
-        //The program will accept the user’s answer on the same line as it presented the problem.
-        Scanner reader = new Scanner(System.in);
-        System.out.print("What is " + randNum1 + " + " + randNum2 + "? ");
-        int userAnswer = reader.nextInt(); // Scans the next token of the input as an int.
-        reader.close();
+        //Format your operator menu as shown in the example output.
+        System.out.println("Tell me what operation you want to perform. Enter:");
+        System.out.println("    a -   for addition");
+        System.out.println("    s -   for subtraction");
+        System.out.println("    m -   for multiplication");
+        System.out.println("    d -   for division");
+        System.out.print("What is your choice: ");
 
-        //Calculate the correct answer
-        int answer = randNum1 + randNum2;
-        //The program will output the result to the screen.
-        System.out.println("The correct answer is: " + answer + ", Your input was: " + userAnswer + ".");
-        //Finally, the program will say goodbye to the user and terminate.
-        System.out.println("Goodbye");
+        //Scanner 2 to listen for character input from System.in
+        Scanner characters = new Scanner(System.in);
+        char choice = characters.next().trim().charAt(0);
+        characters.close();
+        numbers.close();
+
+        //Brains of the program, computational math loops initiated depending on character input from user.
+        float answer = 0;
+        if (choice == 'a') {
+            answer = firstNum + secoundNum;
+        } else if (choice == 's') {
+            answer = firstNum - secoundNum;
+        } else if (choice == 'm') {
+            answer = firstNum * secoundNum;
+        } else if (choice == 'd') {
+            answer = firstNum / secoundNum;
+        }
+
+        //Formatting and displaying results to the user
+        //In the output, display no answer with more than two decimal places.
+        DecimalFormat twoDecimal = null;
+        twoDecimal = new DecimalFormat("#.##");
+        System.out.println("The answer is " + twoDecimal.format(answer));
+        System.out.println("Thank you for using the BuzyBot calculator.  Goodbye.");
         System.exit(0);
     }
 }
