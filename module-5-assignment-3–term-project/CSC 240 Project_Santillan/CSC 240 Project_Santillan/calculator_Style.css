@@ -1,0 +1,48 @@
+/* Styling is organised from top of calculator to bottom*/
+
+/* Styling for backbone of app excludes buttons and textfield*/
+.pane {
+    -fx-background-color: white;
+    -fx-accent: #4e45a0;
+}
+
+/* Styling for the textfield where numbers are displayed*/
+.textField {
+    -fx-background-color: white;
+    -fx-text-fill: #4e45a0;
+}
+
+/* Styling for all buttons other then = , c , and numbers*/
+#operatorButton {
+    -fx-background-color: rgba(108, 104, 179, 0.45);
+    -fx-text-fill: rgba(6, 0, 31, 0.9);
+    -fx-background-radius: 0;
+}
+
+#operatorButton:hover {
+    -fx-background-color: #6c68b3;
+    -fx-text-fill: #e6e6e6;
+}
+
+/* Styling for numbered buttons*/
+#numberButton {
+    -fx-background-color: #e6e6e6;
+    -fx-text-fill: black;
+    -fx-background-radius: 0;
+}
+
+#numberButton:hover {
+    -fx-background-color: #6c68b3;
+    -fx-text-fill: #e6e6e6;
+}
+
+/* Styling for the = and c button*/
+#darkButton {
+    -fx-background-color: #6c68b3;
+    -fx-text-fill: #e6e6e6;
+    -fx-background-radius: 0;
+}
+
+#darkButton:hover {
+    -fx-background-color: #4e45a0;
+}
