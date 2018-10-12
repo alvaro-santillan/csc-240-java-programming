@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="pane" stylesheets="@calculator_Style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.controller">
+    <children>
+
+      <!--FXML for the textfield-->
+      <TextField fx:id="display" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" onInputMethodTextChanged="#operateButton" pickOnBounds="false" prefHeight="100.0" prefWidth="400.0" scaleShape="false" styleClass="textField" stylesheets="@calculator_Style.css">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </TextField>
+
+      <!-- FXML for buttons: C = -->
+      <HBox layoutY="52.0" prefHeight="100.0" prefWidth="400.0" spacing="4.0" style="-fx-background-color: ;" stylesheets="@calculator_Style.css" AnchorPane.topAnchor="100.0">
+          <children>
+             <Button id="darkButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="92.0" prefWidth="298.0" styleClass="operatorButton" text="C">
+                 <font>
+                     <Font name="Microsoft JhengHei Light" size="32.0" />
+                 </font></Button>
+            <Button id="darkButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="darkButton" text="=" textOverrun="CLIP">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </HBox>
+
+
+        <!-- FXML for buttons: 7 8 9 / -->
+        <HBox layoutY="200.0" prefHeight="100.0" prefWidth="400.0" spacing="4.0" stylesheets="@calculator_Style.css" AnchorPane.topAnchor="200.0">
+            <children>
+                <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="7" textOverrun="CLIP">
+                    <font>
+                        <Font name="Calibri" size="32.0" />
+                    </font>
+                </Button>
+                <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="8" textOverrun="CLIP">
+                    <font>
+                        <Font name="Calibri" size="32.0" />
+                    </font>
+                </Button>
+                <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="9" textOverrun="CLIP">
+                    <font>
+                        <Font name="Calibri" size="32.0" />
+                    </font>
+                </Button>
+             <Button id="operatorButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="operatorButton" text="/" textOverrun="CLIP">
+                 <font>
+                     <Font name="Microsoft JhengHei Light" size="32.0" />
+                 </font>
+             </Button>
+            </children>
+            <padding>
+                <Insets left="4.0" right="4.0" />
+            </padding>
+        </HBox>
+        
+      <!-- FXML for buttons: 4 5 6 X -->
+      <HBox layoutY="80.0" prefHeight="100.0" prefWidth="400.0" spacing="4.0" stylesheets="@calculator_Style.css" AnchorPane.topAnchor="300.0">
+         <children>
+             <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="4" textOverrun="CLIP">
+                 <font>
+                     <Font name="Calibri" size="32.0" />
+                 </font></Button>
+             <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="5" textOverrun="CLIP">
+                 <font>
+                     <Font name="Calibri" size="32.0" />
+                 </font></Button>
+             <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="6" textOverrun="CLIP">
+                 <font>
+                     <Font name="Calibri" size="32.0" />
+                 </font></Button>
+                <Button id="operatorButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="x" textOverrun="CLIP">
+                    <font>
+                        <Font name="Microsoft JhengHei Light" size="32.0" />
+                    </font>
+                </Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </HBox>
+
+      <!-- FXML for buttons: 1 2 3 - -->
+      <HBox layoutY="120.0" prefHeight="100.0" prefWidth="400.0" spacing="4.0" stylesheets="@calculator_Style.css" AnchorPane.topAnchor="400.0">
+         <children>
+             <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="1" textOverrun="CLIP">
+                 <font>
+                     <Font name="Calibri" size="32.0" />
+                 </font></Button>
+             <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="2" textOverrun="CLIP">
+                 <font>
+                     <Font name="Calibri" size="32.0" />
+                 </font></Button>
+             <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="3" textOverrun="CLIP">
+                 <font>
+                     <Font name="Calibri" size="32.0" />
+                 </font></Button>
+            <Button id="operatorButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="-" textOverrun="CLIP">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="32.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" />
+         </padding>
+      </HBox>
+
+      <!-- FXML for buttons: 0 + -->
+      <HBox layoutX="10.0" layoutY="210.0" prefHeight="100.0" prefWidth="400.0" spacing="4.0" stylesheets="@calculator_Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="500.0">
+         <children>
+            <Button id="numberButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="298.0" styleClass="numberButton" text="0" textOverrun="CLIP">
+               <font>
+                  <Font name="Calibri" size="32.0" />
+               </font>
+            </Button>
+             <Button id="operatorButton" alignment="CENTER" mnemonicParsing="false" onAction="#operateButton" prefHeight="100.0" prefWidth="100.0" styleClass="numberButton" text="+" textOverrun="CLIP">
+             <font>
+                 <Font name="Microsoft JhengHei Light" size="32.0" />
+             </font></Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" />
+         </padding>
+      </HBox>
+
+   </children>
+</AnchorPane>
